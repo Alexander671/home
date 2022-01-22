@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for error in errors %}
+  {{error}}
+    <p>
+{% endfor %}
+
+<form action="/certificate/" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    {% if user.username == "anna" %}
+        <p>Кодовое слово для &quot;особенных&quot;:
+        <input type="text" name = 'text'>
+    {% endif %}
+    <input type="submit" value="Submit" />
+</form>
+
+ <p>
+
+    <font color="red"> Примите или отклоните сертификаты: </font> <p>
+    {% for a in accept %}
+    <p>
+Услуга:              {{ a.name }} <p>
+Количество:          {{ a.amount }} <p>
+Дата создания:	     {{ a.created }} <p>
+Имя пользователя:    {{ a.user }} <p> 
+Принято:            {% if a.accept %}
+                    YES
+                    {% else %}
+                    NO
+                    {% endif %} <p>
+<a href="{% url 'certificate_accept' pk=a.pk %}">Save</a>
+<a href="{% url 'certificate_delete' pk=a.pk %}">Delete</a></p>
+    
+    {% endfor %}
+ -----------------------------------------------------<p>
+    <font color="green"> Действующие сертификаты:  </font> <p>
+    {% for a in certificates %}
+    
+Услуга:              {{ a.name }} <p>
+Количество:          {{ a.amount }} <p> 
+
+
+        {% if a.use_request and a.user == user %}
+
+                Пользователь {{a.user_with}}
+            заявляет, что услуга была оказана, вы согласны?<p>
+
+                <a href="{% url 'certificate_use' pk=a.pk %}"> Confirm </a> <p>
+
+        {% elif not a.use_request and a.user_with == user %}
+                Услуга была оказана?<p>
+                
+                <a href="{% url 'certificate_use' pk=a.pk %}">Use</a> <p>
+                
+        {% else %}
+            <p>
+        {% endif %}
+
+
+Дата создания:	     {{ a.created }} <p>
+Имя пользователя:    {{ a.user }} <p> 
+Принято:            {% if a.accept %}
+                    YES
+                    {% else %}
+                    NO
+                    {% endif %} <p>
+-----------------------------------------------------
+    <p>
+{% endfor %}
+
+{% endblock %}
