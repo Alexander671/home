@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+Click <a class="navbar-item" href="on"> here </a> turn the LED on pin 2 ON<br>
+Click <a class="navbar-item" href="off"> here </a> turn the LED on pin 2 OFF<br>
+
+-----------------------------------------
+
+
+{% for error in form.errors %}
+  {{error}}
+    <p>
+{% endfor %}
+
+<form action="/iot/" method="POST">
+    {% csrf_token %}
+    {{ formset }}
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

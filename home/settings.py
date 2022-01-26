@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'todo',
-    'certificate'
+    'certificate',
+    'iot',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -82,6 +84,10 @@ DATABASES = {
     }
 }
 
+# schedule
+CRONJOBS = [
+    ('*/1 * * * *', 'iot.timeRequest.printHello', '>> /home/alexander/Job/python/Practice/Production/home/path/to/log/file.log')
+    ]
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
