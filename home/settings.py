@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'todo',
     'certificate',
     'iot',
-    'django_crontab'
+    'django_crontab', 
+    'flashcards'
 ]
 
 MIDDLEWARE = [

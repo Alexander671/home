@@ -14,6 +14,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('iot/', include('iot.urls')),
+    path('flashcards/', include('flashcards.urls')),
 	
     path('certificate/<int:pk>/accept', certificate_accept, name = 'certificate_accept'),
     path('certificate/<int:pk>/delete', certificate_delete, name = 'certificate_delete'),

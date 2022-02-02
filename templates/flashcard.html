@@ -1,0 +1,27 @@
+<!-- templates/flashcard.html-->
+{% extends 'base.html' %}
+{% block content %}
+
+--------------------------------------------------------
+
+{% for error in form.errors %}
+  {{error}}
+    <p>
+{% endfor %}
+
+<form action="/flashcards/" method="POST">
+    {% csrf_token %}
+    {{ formcard.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+
+--------------------------------------------------------
+
+<form action="/flashcards/" method="POST">
+    {% csrf_token %}
+    {{ formcategory }}
+    <input type="submit" value="Submit" />
+</form>
+
+
+{% endblock %}
