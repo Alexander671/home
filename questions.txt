@@ -1,5 +1,3 @@
-# Python Interview Questions
-
 ## Q. How can you improve the following code?
 
 ```py
@@ -12,9 +10,6 @@ for letter in string.letters:
 ```
 Bonus points for mentioning `enumerate` and use of `str.format`.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
 
 ## Q. What is Python particularly good for? When is using Python the "right choice" for a project?
 
@@ -33,9 +28,7 @@ Although likes and dislikes are highly personal, a developer who is "worth his o
 
 With regard to the question of when using Python is the "right choice" for a project, the complete answer also depends on a number of issues orthogonal to the language itself, such as prior technology investment, skill set of the team, and so on. Although the question as stated above implies interest in a strictly technical answer, a developer who will raise these additional issues in an interview will always "score more points" with me since it indicates an awareness of, and sensitivity to, the "bigger picture" (i.e., beyond just the technology being employed). Conversely, a response that Python is always the right choice is a clear sign of an unsophisticated developer.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are some drawbacks of the Python language?
 
@@ -45,9 +38,7 @@ The two most common valid answers to this question (by no means intended as an e
 - The Global Interpreter Lock (GIL). CPython (the most common Python implementation) is not fully thread safe. In order to support multi-threaded Python programs, CPython provides a global lock that must be held by the current thread before it can safely access Python objects. As a result, no matter how many threads or processors are present, only one thread is ever being executed at any given time. In comparison, it is worth noting that the PyPy implementation discussed earlier in this article provides a stackless mode that supports micro-threads for massive concurrency.
 - Execution speed. Python can be slower than compiled languages since it is interpreted. (Well, sort of. See our earlier discussion on this topic.)
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. We know Python is all the rage these days. But to be truly accepting of a great technology, you must know its pitfalls as well.
 
@@ -63,9 +54,7 @@ And even after these pitfalls, of course. Being easy makes it addictive. Once a 
 
 So while it has problems, it is also a wonderful tool for a lot of things. 
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are the key differences between Python 2 and 3?
 
@@ -100,9 +89,7 @@ Error Handling
         - Sorting a heterogeneous list no longer makes sense.     
         - All the elements must be comparable to each other
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are some key differences to bear in mind when coding in Python vs. Java?
 
@@ -137,9 +124,7 @@ Disclaimer #2. The intent here is not to launch into a religious battle over the
 
     - An expert knowledge of Python extends well beyond the technical minutia of the language. A Python expert will have an in-depth understanding and appreciation of Python's benefits as well as its limitations. Accordingly, here are some sample questions that can help assess this dimension of a candidate's expertise:
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What will be the output of the code below in Python 2?
 
@@ -158,9 +143,7 @@ Also, how would the answer differ in Python 3 (assuming, of course, that the abo
 
     -  kjalfkjaslf
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the difference between range and xrange? How has this changed over time?
 
@@ -170,9 +153,7 @@ Also, how would the answer differ in Python 3 (assuming, of course, that the abo
     - The only difference is that range returns a Python list object and x range returns an xrange object. This means that xrange doesn't actually generate a static list at run-time like range does. It creates the values as you need them with a special technique called yielding. This technique is used with a type of object known as generators. That means that if you have a really gigantic range you'd like to generate a list for, say one billion, xrange is the function to use. 
     - This is especially true if you have a really memory sensitive system such as a cell phone that you are working with, as range will use as much memory as it can to create your array of integers, which can result in a Memory Error and crash your program. It's a memory hungry beast.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What will be the output of the code below?
 
@@ -183,9 +164,7 @@ print(list[10:])
 - TypeError: 'type' object is not subscriptable
 if proper name given,it will print [].
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is a method?
 
@@ -208,9 +187,7 @@ class Derived(Base):
 If you're using classic classes: For a class definition such as 
 `class Derived(Base):` ... you can call method meth() defined in Base (or one of Base's base classes) as Base.meth(self,arguments). Here, Base.meth is an unbound method, so you need to provide the self argument.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How can I organize my code to make it easier to change the base class?
 
@@ -218,9 +195,7 @@ You could define an alias for the base class, assign the real base class to it b
 
 Example: BaseAlias = class Derived(BaseAlias): def meth(self): BaseAlias.meth(self).
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do I find the current module name?
 A module can find out its own module name by looking at the predefined global variable `__name__`. If this has the value `'__main__'`, the program is running as a script. Many modules that are usually used by importing them also provide a command-line interface or a self-test, and only execute this code after checking `__name__`: 
@@ -239,9 +214,7 @@ m = __import__(s)
 	for i in s.split(".")[1:]: m = getattr(m, i) 
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do I access a module written in Python from C?
 
@@ -251,17 +224,13 @@ You can get a pointer to the module object as follows:
 
 If the module hasn't been imported yet (i.e. it is not yet present in sys.modules), this initializes the module; otherwise it simply returns the value of ``sys.modules[""]``. Note that it doesn't enter the module into any namespace -- it only ensures it has been initialized and is stored in sys.modules. You can then access the module's attributes (i.e. any name defined in the module) as follows: attr = PyObject_GetAttrString(module, ""); Calling PyObject_SetAttrString() to assign to variables in the module also works.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do I convert a number to a string?
 
 To convert, e.g., the number 144 to the string '144', use the built-in function str(). If you want a hexadecimal or octal representation, use the built-in functions hex() or oct(). For fancy formatting, use the % operator on strings, e.g. "%04d" % 144 yields '0144' and "%.3f" % (1/3.0) yields '0.333'. See the library reference manual for details.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How is the Implementation of Python's dictionaries done?
 
@@ -281,9 +250,7 @@ Remove all:
 
 A hash value of the key is computed using a hash function, The hash value addresses a location in an array of "buckets" or "collision lists" which contains the (key , value) pair.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is used to create Unicode string in Python?
 
@@ -294,9 +261,7 @@ A hash value of the key is computed using a hash function, The hash value addres
 
 Add unicode before the string. Ex: unicode(text) resulting in text.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the built-in function used in Python to iterate over a sequence of numbers?
 
@@ -327,9 +292,7 @@ Output:
     8
     9
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Does Python have a switch-case statement?
 
@@ -367,9 +330,7 @@ def switch(choice):
 
 Here, the get() method returns the value of the key. When no key matches, the default value (the second argument) is returned.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Does python support switch or case statement in Python? If not what is the reason for the same?
 
@@ -393,9 +354,7 @@ else:
     pass
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Does Python support strongly for regular expressions?
 
@@ -405,17 +364,13 @@ Regular expressions (called REs, or regexes, or regex patterns) are essentially 
 
 Regular expression patterns are compiled into a series of bytecodes which are then executed by a matching engine written in C. For advanced use, it may be necessary to pay careful attention to how the engine will execute a given RE, and write the RE in a certain way in order to produce bytecode that runs faster. Optimization isn't covered in this document, because it requires that you have a good understanding of the matching engine's internals.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do you perform pattern matching in Python? Explain.
 
 Regular Expressions/REs/ regexes enable us to specify expressions that can match specific "parts" of a given string. For instance, we can define a regular expression to match a single character or a digit, a telephone number, or an email address, etc. The Python's "re" module provides regular expression patterns and was introduce from later versions of Python 2.5. "re" module is providing methods for search text strings, or replacing text strings along with methods for splitting text strings based on the pattern defined.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Write a regular expression that will accept an email id. Use the `re` module.
 
@@ -429,9 +384,7 @@ e.group()
 
 To brush up on regular expressions, check Regular Expressions in Python.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ### _Garbage Collector & Memory Manager_
 
@@ -444,9 +397,7 @@ Any object reference count becomes zero then we call that object as a unused or 
 
 While executing the python program if any object reference count becomes zero, then internally python interpreter calls the garbage collector and garbage collector will remove that object from memory location.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How is memory managed in Python?
 
@@ -454,9 +405,7 @@ Python memory is managed by Python private heap space. All Python objects and da
 
 Python has a private heap space to hold all objects and data structures. Being programmers, we cannot access it; it is the interpreter that manages it. But with the core API, we can access some tools. The Python memory manager controls the allocation. 
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Why isn't all memory freed when Python exits?
 Objects referenced from the global namespaces of Python modules are not always deallocated when Python exits. This may happen if there are circular references. There are also certain bits of memory ...
@@ -468,9 +417,7 @@ Plus, it is impossible to de-allocate portions of memory reserved by the C libra
 
 Whenever Python exits, especially those Python modules which are having circular references to other objects or the objects that are referenced from the global namespaces are not always de-allocated or freed.It is impossible to de-allocate those portions of memory that are reserved by the C library.On exit, because of having its own efficient clean up mechanism, Python would try to de-allocate/destroy every other object.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Is it possible to assign multiple var to values in list?
 
@@ -489,9 +436,7 @@ cat = ['fat', 'orange', 'loud']
 size, color, disposition = cat
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is `__slots__` and when is it useful?
 
@@ -528,9 +473,7 @@ if __name__ == "__main__":
      print(instance.__slots__)
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What Are The Types of Objects Support in Python Language?
 
@@ -608,9 +551,7 @@ Mutable built-in types:
     Mutable objects performance is low when compared to immutable objects   
     Applying Iterations mutable objects takes huge time
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Python is Call by Value or Call by Reference? How are arguments passed by value or by reference?
 
@@ -655,9 +596,7 @@ c.7
 
 The words `args` and `kwargs` are a convention, and we can use anything in their place.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How can I pass optional or keyword parameters from one function to another?
 
@@ -677,9 +616,7 @@ def f(x, *tup, **kwargs):
     apply(g, (x,)+tup, kwargs)
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is lambda? What are Lambda Functions ?
 
@@ -730,9 +667,7 @@ add(2,3)
 output:     
 `5`
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
  
 ## Q. How do you create your own package in Python?
 
@@ -768,9 +703,7 @@ class A:
 ```
 Hi, monkey
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain serialization and deserialization / Pickling and unpicking.
 Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling. While the process of retrieving original Python objects from the stored string representation is called unpickling.
@@ -792,9 +725,7 @@ Reference:
 [1]   https://www.sanfoundry.com/python-questions-answers-pickle-module/
 [2]   https://docs.python-guide.org/scenarios/serialization/
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 
 ## Q. What are higher ordered functions?
@@ -846,9 +777,7 @@ inc, dec, reset = count.up, count.down, count.set
 ```
 Here inc(), dec() and reset() act like functions which share the same counting variable.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q.  How do I copy a file? How to copy object in Python? Diff between shallow copy and deep copy? 
 
@@ -875,9 +804,7 @@ Traceback (most recent call last):
 File "<pyshell#97>", line 1, in <module> mytuple[1]=2   
 TypeError: 'tuple' object does not support item assignment
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the purpose of PYTHONSTARTUP, PYTHONCASEOK, PYTHONHOME & PYTHONPATH environment variables?
 
@@ -889,9 +816,7 @@ TypeError: 'tuple' object does not support item assignment
     
 - PYTHONPATH − It has a role similar to PATH. This variable tells the Python interpreter where to locate the module files imported into a program. It should include the Python source library directory and the directories containing Python source code. PYTHONPATH is sometimes preset by the Python installer.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain Inheritance in Python with an example.
 
@@ -924,9 +849,7 @@ Inheritance allows One class to gain all the members(say attributes and methods)
  
     - Hybrid Inheritance- Hybrid inheritance is a combination of two or more types of inheritance.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is Hierarchical Inheritance?
 
@@ -967,9 +890,7 @@ In m3 of Z
 2099735
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Suppose class C inherits from classes A and B as class C(A,B).Classes A and B both have their own versions of method func(). If we call func() from an object of class C, which version gets invoked?
 
@@ -1077,9 +998,7 @@ mylist[-6:-1]
 ```
 [3, 4, 5, 6, 7]
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain split(), sub(), subn() methods of `re` module in Python.  
 
@@ -1093,9 +1012,7 @@ mylist[-6:-1]
 
 Map function executes the function given as the first argument on all the elements of the iterable given as the second argument. If the function given takes in more than 1 arguments, then many iterables are given. #Follow the link to know more similar functions
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How to get indices of N maximum values in a NumPy array?
 
@@ -1107,9 +1024,7 @@ arr = np.array([1, 3, 2, 4, 5])
 print(arr.argsort()[-3:][::-1])
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is a Python module?
 
@@ -1123,17 +1038,13 @@ Here,
 `os` and `os.path` – modules include functions for accessing the filesystem   
 `shutil` – module enables you to copy and delete the files.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How many kinds of sequences are supported by Python? What are they?
 
 Python supports 7 sequence types. They are str, list, tuple, unicode, byte array, xrange, and buffer. where xrange is deprecated in python 3.5.X.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How to display the contents of text file in reverse order?How will you reverse a list?
 
@@ -1144,9 +1055,7 @@ Python supports 7 sequence types. They are str, list, tuple, unicode, byte array
         print(line)
    ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the difference between NumPy and SciPy?
 
@@ -1266,9 +1175,7 @@ Sometimes, when we want to iterate over a list, a few methods come in handy.
  ```
  Ans: -13
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Write a Python function that checks whether a passed string is palindrome Or not? 
 
@@ -1289,9 +1196,7 @@ def isPalindrome(string):
 print(isPalindrome('aza'))
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Write a Python program to calculate the sum of a list of numbers.
 
@@ -1327,9 +1232,7 @@ data = c1.fetch(s)
 db.close()
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Write a Python program to read a random line from a file.
 
@@ -1386,9 +1289,7 @@ print("Hi") if a<b else print("Bye")
 ```
 Ans: Hi
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is multithreading? Give an example.
 
@@ -1440,9 +1341,7 @@ dir(copy.copy)
 ['__annotations__', '__call__', '__class__', '__closure__', '__code__', '__defaults__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__get__', '__getattribute__', '__globals__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ### _**Dictionary**_
 
@@ -1487,9 +1386,7 @@ print(dict_keys)
 ```
 (['a', 'b', 'c', 'e'])
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Write Python logic to count the number of capital letters in a file.
 
@@ -1559,9 +1456,7 @@ Python has the following keywords:
 `class	except	global	None	raise	yield`  
 `continue	exec	if	nonlocal	return`	
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do you remove the leading whitespace in a string?
 
@@ -1623,9 +1518,7 @@ Also, istitle() will tell us if a string is in title case.
 ```
 True
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the pass statement in Python?
 
@@ -1659,9 +1552,7 @@ for i in range(7):
 5   
 6
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is a closure in Python?
 
@@ -1719,9 +1610,7 @@ Addition (+) This adds two values.
 7//8 # 0
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain relational operators in Python.
 
@@ -1768,9 +1657,7 @@ True
 
 True
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are assignment operators in Python?
 
@@ -1814,9 +1701,7 @@ We can combine all arithmetic operators with the assignment symbol.
 
 0.0
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain logical operators in Python.
 
@@ -1900,9 +1785,7 @@ Here, 001 was shifted to the left by two places to get 100, which is binary for 
 
 For more insight on operators, refer to Operators in Python.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How would you work with numbers other than those in the decimal number system?
 
@@ -2059,9 +1942,7 @@ Unlike languages like C++, Python does not have multiline comments. All it has i
 
 In fact, you can place a comment anywhere in your code. You can use it to explain your code.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How would you convert a string into an int in Python?
 
@@ -2081,9 +1962,7 @@ Let's check the types:
 
  <class 'int'>
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do you take input in Python?
 
@@ -2123,9 +2002,7 @@ Now when we multiply it by 2, we get this:
 
 `14`
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is a frozen set in Python?
 
@@ -2156,9 +2033,7 @@ However, a set is mutable. A frozen set is immutable. This means we cannot chang
      type(myset)
   <class 'frozenset'>
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How would you generate a random number in Python?
 
@@ -2206,9 +2081,7 @@ We can also use the function randint(). It takes two arguments to indicate a ran
 
 2
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How will you capitalize the first letter of a string?     
 
@@ -2228,9 +2101,7 @@ However, it will let other characters be.
 
 '$HRIR@M'
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How will you check if all characters in a string are alphanumeric?
 
@@ -2274,9 +2145,7 @@ True
 
 False
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the concatenation?
 
@@ -2300,9 +2169,7 @@ Here, 4 is considered an int. Let's do this again.
      (2,3)+(4,)  # (obj,) is way to declare single empty
     (2, 3, 4)
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is a function?
 
@@ -2317,9 +2184,7 @@ greater(3,3.5)
 
 You can create your own function or use one of Python's many built-in functions.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is recursion?
 
@@ -2347,9 +2212,7 @@ Here, it pairs items from the two lists, and creates tuples with those. But it d
 
 [('a', 1), ('b', 2), ('c', 3)]
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. If you are ever stuck in an infinite loop, how will you break out of it?
 
@@ -2374,9 +2237,7 @@ File "<pyshell#331>", line 2, in counterfunc
 while(n==7):print(n)    
 KeyboardInterrupt
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. With Python, how do you find out which directory you are currently in?
 
@@ -2398,9 +2259,7 @@ We can also change the current working directory with chdir().
 
 'C:\\Users\\lifei\\Desktop'
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How will you find, in a string, the first word that rhymes with 'cake'?
 
@@ -2429,9 +2288,7 @@ This creates a window with the title 'My Game'. You can position your widgets on
 
 Follow this link to know more about Python Libraries
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How is a .pyc file different from a .py file?
 
@@ -2443,9 +2300,7 @@ This is simple. We call the function len() on the string we want to calculate th
 
      len('Adi Shakara')
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What does the following code output?
 
@@ -2467,9 +2322,7 @@ Well, this is because the list argument does not initialize to its default value
 
 Let's revise the Basis of Python Programming
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is a decorator? How do I define my own?
 
@@ -2495,9 +2348,7 @@ $$$$$$$$$$$$$$$$$
 
 Decorators are an example of metaprogramming, where one part of the code tries to change another. For more on decorators, read Python Decorators.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Why use function decorators? Give an example.
 
@@ -2511,9 +2362,7 @@ Flask, for example, uses decorators as the mechanism for adding new endpoints to
 
 Below are some Basic Python Programming Interview Questions and answers for freshers.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 
 ## Q. How many arguments can the range() function take?
@@ -2564,9 +2413,7 @@ Here, the first argument is the start value, the second is the stop value, and t
 
 [9, 8, 7, 6, 5, 4, 3]
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do you debug a program in Python? Answer in brief.
 
@@ -2584,9 +2431,7 @@ Some pdb commands include-
     <l> — List source code
     <p> — Print an expression
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What command do we use to debug a Python program?
 
@@ -2614,9 +2459,7 @@ C:\Users\lifei\Desktop>python -m pdb try.py
 
 Then, we can start debugging.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is a Counter in Python?
 
@@ -2646,9 +2489,7 @@ Yes, a NumPy array is better than a Python list. This is in the following ways:
 
 Read our latest tutorial on Python NumPy
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How would you create an empty NumPy array?
 
@@ -2667,9 +2508,7 @@ b. Option 2
 
 array([], shape=(0, 0), dtype=float64)
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain the use of the 'nonlocal' keyword in Python.
 
@@ -2716,9 +2555,7 @@ inner()
 
      outer()
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the global keyword?
 
@@ -2742,9 +2579,7 @@ The solution:
         print(a)
      func()
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How would you make a Python script executable on Unix?
 
@@ -2753,9 +2588,7 @@ Ans. For this to happen, two conditions must be met:
 The script file's mode must be executable
 The first line must begin with a hash(#). An  example of this will be: #!/usr/local/bin/python
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What functions or methods will you use to delete a file in Python?
 
@@ -2773,17 +2606,13 @@ When we go and check our Desktop, the file is gone. Let's go make it again so we
 
 Both functions are the same, but unlink is the traditional Unix name for it.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are accessors, mutators, and @property?
 
 Ans. What we call getters and setters in languages like Java, we term accessors and mutators in Python. In Java, if we have a user-defined class with a property 'x', we have methods like getX() and setX(). In Python, we have @property, which is syntactic sugar for property(). This lets us get and set variables without compromising on the conventions. For a detailed explanation on property, refer to Python property.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Differentiate between the append() and extend() methods of a list.
 
@@ -2807,9 +2636,7 @@ And this is how extend() works:
 
 [1, 2, 3, 4, 5, 6, 7, 8]
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 
 ## Q. What do you mean by overriding methods?
@@ -2833,9 +2660,7 @@ b.sayhello()
 ```
 Hello, I'm B
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is JSON? Describe in brief how you'd convert JSON data into Python data?
 
@@ -2846,9 +2671,7 @@ Ans. JSON stands for JavaScript Object Notation. It is a highly popular data for
 
 Python supports JSON parsers. In fact, JSON-based data is internally represented as a dictionary in Python. To convert JSON data into Python data, we use the load() function from the JSON module.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do you execute a Python Script?
 
@@ -2856,9 +2679,7 @@ From the command line, type python .py or pythonx.y
 .py where the x.y is the version of the Python interpreter desired.
 Learn how to use Python, from beginner basics to advanced techniques, with online video tutorials taught by industry experts. Enroll for Free Python Training Demo!
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain the use of try: except: raise, and finally:
 
@@ -2875,9 +2696,7 @@ Code Example:
     finally:
         …# code that will be executed regardless of exception handling goes here.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is a namespace in Python?
 
@@ -2887,9 +2706,7 @@ A namespace is a collection of names. It maps names to corresponding objects. Wh
 
 On starting the interpreter, it creates a namespace for as long as we don't exit. We have local namespaces, global namespaces, and a built-in namespace.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain the differences between local and global namespaces.
 
@@ -2903,18 +2720,14 @@ Global, Local, Module and Class namespaces.
 
 Triple quotes ''"" or '" are string delimiters that can span multiple lines in Python. Triple quotes are usually used when spanning multiple lines, or enclosing a string that has a mix of single and double quotes contained therein.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How to use GUI that comes with Python to test your code?
 
 That is just an editor and a graphical version of the interactive shell. You write or load code and run it, or type it into the shell.
 There is no automated testing.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How does the Python version numbering scheme work?
 
@@ -2945,9 +2758,7 @@ In other words, all versions labeled 2.0aN precede the versions labeled 2.0bN, w
 
 You may also find version numbers with a "+" suffix, e.g. "2.2+". These are unreleased versions, built directly from the subversion trunk. In practice, after a final minor release is made, the subversion trunk is incremented to the next minor version, which becomes the "a0" version, e.g. "2.4a0".
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Where is math.py (socket.py, regex.py, etc.) source file?
 
@@ -2958,9 +2769,7 @@ If you can't find a source file for a module, it may be a built-in or dynamicall
 - Modules written in C and linked with the interpreter; to get a list of these, type;
 Import sys print sys.builtin_module_names;
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do I make a Python script executable on UNIX?
 
@@ -2987,9 +2796,7 @@ exec python $0 ${1+"$@"}
 The minor disadvantage is that this defines the script's `__doc__`string. However, you can fix that by adding:  
 `__doc__ = """…Whatever…"""`
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Why do not my signal handlers work?
 
@@ -3005,9 +2812,7 @@ Recompile Python
 Re-link it using g++ (change LINKCC in the python Modules Makefile)
 Link your extension module using g++ (e.g., "g++ -shared -o mymodule.so mymodule.o").
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do I send mail from a Python script?
 
@@ -3046,9 +2851,7 @@ if sts != 0:
     print ("Sendmail exit status", sts)
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How can I mimic CGI form submission (METHOD=POST)? I would like to retrieve web pages that are the result of posting a form.
 
@@ -3089,9 +2892,7 @@ print(x)
 'name=Guy%20Steele,%20Jr.'
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Why is that none of my threads are not running? How can I make it work?
 
@@ -3105,9 +2906,7 @@ for i in range(n): print name, i
 for i in range(10)
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What Are The Implementation In Python Program?
 
@@ -3189,9 +2988,7 @@ D:/mindmajix Python>python Demo.py
 `-1000`     
 `2000.000`
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are The Data Types Supports in Python Language?   
 
@@ -3221,9 +3018,7 @@ They are:
 Fundamental Types
 Collection Types
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ### _Control Flow_
 
@@ -3272,9 +3067,7 @@ for myChar hi myString:
     print(myChar)
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Given the string "I LoveQPython" use afor loop and illustrate printing each character tip to, but not including the Q.
 
@@ -3286,9 +3079,7 @@ for myCizar in myString:
 print(myChar)
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Given the string "I Love Python" print out each character except for the spaces, using a for loop.
 
@@ -3300,9 +3091,7 @@ continue
 print myChar
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ### _Data Types_
 
@@ -3341,9 +3130,7 @@ print myChar
 
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the Dictionary?
 
@@ -3365,9 +3152,7 @@ print myChar
 
 - Heterogeneous keys and heterogeneous values are allowed.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How to Search Path of Modules?
 
@@ -3380,9 +3165,7 @@ By default python interpreter search for the imported modules in the following l
 - Built-in attributes of a module:
 - By default for each and every python module some properties are added internally and we call thoseproperties as a built-in-attribute of a module
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are the Packages?
 
@@ -3402,9 +3185,7 @@ We can open the files by calling open function of built-in-modules
 At the time of opening the file, we have to specify the mode of the file
 Mode of the file indicates for what purpose the file is going to be opened(r,w,a,b)
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are the Runtime Errors?
 
@@ -3422,9 +3203,7 @@ Creating runtime error representation class object is technically known as a ris
 While executing the program if any exception is raised, then internally python interpreter verify any code is implemented to handle raised exception or not
 If code is not implemented to handle raised exception then program will be terminated abnormally
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is Abnormal Termination?
 
@@ -3442,9 +3221,7 @@ try{
 The statements which causes to run time errors and other statements which depends on the execution of run time errors statements are recommended to represent in try block
 While executing try block statement if any exception is raised then immediately try block identifies that exception, receive that exception and forward that exception to except block without executing remaining statements to try block.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the Difference Between Methods & Constructors?
 
@@ -3458,9 +3235,7 @@ Constructor
 - With respect to one object one constructor can be executed only once
 - Constructors are used to define & initialize the non static variable
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is the Encapsulation?
 
@@ -3483,9 +3258,7 @@ Create the emp1 table in the database by using following command
 Whenever we run the DML commands through the python program, then the no.of records which are modified because of that command will be stored into the rowcount attribute of cursor object.     
 After executing the DML Command through the python program we have to call commit method of cursor object.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ### _Multithreading_
 
@@ -3505,9 +3278,7 @@ Whenever waiting time is over or specified thread execution is over - then immed
 - If running state threads execution is over then immediately those threads execution will be terminated
  -The threads which execution is terminated are known as dead state threads.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is scheduling?
 
@@ -3517,9 +3288,7 @@ Among multiple threads:
   is over,      
 - which thread as to continue the execution next this comes under scheduling. Scheduling is highly dynamic
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. for loop is implemented in python language as follows:
 
@@ -3536,9 +3305,7 @@ For loop takes the given object, convert that object in the form of iterable obj
 
 While getting the one by value element from the iterable object if stop iteration exception is raised then for loop internally handle that exception
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. OS Module
 
@@ -3556,9 +3323,7 @@ print("3",os.getcwd())
 ```
 Output:
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What Are Applications of Python?
 
@@ -3576,9 +3341,7 @@ Applications of Python
 - Gaming 	 
 - Animation 	
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How Python is interpreted?
 
@@ -3601,9 +3364,7 @@ In Python, iterators are used to iterate a group of elements, containers like li
 
 A mechanism to select a range of items from sequence types like list, tuple, strings etc. is known as slicing.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are generators in Python?
 
@@ -3627,9 +3388,7 @@ Python generator produces a sequence of values to iterate on. This way, it is ki
 36  
 49
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. So, what is an iterator, then?
 
@@ -3656,9 +3415,7 @@ And now, when we call it again, it raises a StopIteration exception. This is bec
     File "<pyshell#295>", line 1, in <module> next(odds)
     StopIteration
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain generators and iterators in python?
 
@@ -3673,9 +3430,7 @@ And now, when we call it again, it raises a StopIteration exception. This is bec
 - Generators are fast, compact, and simpler.
 - Iterators are more memory-efficient.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How can you copy an object in Python?
 
@@ -3691,9 +3446,7 @@ In Python, module is the way to structure program. Each Python program file is a
 
 The folder of Python program is a package of modules. A package can have modules or subfolders.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Mention what are the rules for local and global variables in Python?
 
@@ -3705,9 +3458,7 @@ Global variables: Those variables that are only referenced inside a function are
 
 To share global variables across modules within a single program, create a special module. Import the config module in all modules of your application. The module will be available as a global variable across modules.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain how can you make a Python Script executable on Unix?
 
@@ -3720,9 +3471,7 @@ To make a Python Script executable on Unix, you need to do two things,
 
 By using a command os.remove (filename) or os.unlink(filename)
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain how can you generate random numbers in Python?
 
@@ -3740,17 +3489,13 @@ You can access a module written in Python from C by following method,
 
 Module = =PyImport_ImportModule("<modulename>");
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Mention the use of // operator in Python?
 
 It is a Floor Divisionoperator , which is used for dividing two operands with the result as quotient showing only digits before the decimal point. For instance, 10//5 = 2 and 10.0//5.0 = 2.0.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Mention five benefits of using Python?
 
@@ -3760,17 +3505,13 @@ It is a Floor Divisionoperator , which is used for dividing two operands with th
 - Easy-to-learn for beginners
 - Having the built-in data types saves programming time and effort from declaring variables
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Mention the use of the split function in Python?
 
 The use of the split function in Python is that it breaks a string into shorter strings using the defined separator. It gives a list of all words present in the string.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Mention what is the difference between Django, Pyramid, and Flask?
 
@@ -3784,9 +3525,7 @@ Like Pyramid, Django can also used for larger applications. It includes an ORM.
 
 The data in the failed server won't get removed, but there is a provision for auto-failure, which you can configure for multiple nodes. Fail-over can be triggered during any kind of socket or Memcached server level errors and not during normal client errors like adding an existing key, etc.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain how you can minimize the Memcached server outages in your Python Development?
 
@@ -3795,18 +3534,14 @@ The data in the failed server won't get removed, but there is a provision for au
 - Code is another option to minimize server outages as it gives you the liberty to change the Memcached server list with minimal work
 -  Setting timeout value is another option that some Memcached clients implement for Memcached server outage. When your Memcached server goes down, the client will keep trying to send a request till the time-out limit is reached
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain what is Dogpile effect? How can you prevent this effect?
 
 Dogpile effect is referred to the event when cache expires, and websites are hit by the multiple requests made by the client at the same time.  
 This effect can be prevented by using semaphore lock. In this system when value expires, first process acquires the lock and starts generating new value.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain how Memcached should not be used in your Python project?
 
@@ -3814,17 +3549,13 @@ Memcached common misuse is to use it as a data store, and not as a cache. Never 
 
 Memcached does not offer any form of security either in encryption or authentication
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is List Comprehensions feature of Python used for?
 
 List comprehensions help to create and manage lists in a simpler and clearer way than using `map()`, `filter()` and `lambda`. Each list comprehension consists of an expression followed by a for clause, then zero or more for or if clauses.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are lambda expressions, list comprehensions and generator expressions?
 
@@ -3881,9 +3612,7 @@ y
 ...
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What will be printed out by the second append() statement below?
 
@@ -3950,9 +3679,7 @@ x,y
 ('Y', 'X')
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What will be printed out by the last statement below?
 
@@ -3978,9 +3705,7 @@ for i in range(3):
 [0, 1, 2]
 ```
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Is Python interpreted or compiled?
 
@@ -3988,9 +3713,7 @@ As noted in Why Are There So Many Pythons?, this is, frankly, a bit of a trick q
 
 Further complicating the answer to this question is the fact that, in the case of CPython (the most common Python implementation), the answer really is "sort of both". Specifically, with CPython, code is first compiled and then interpreted. More precisely, it is not precompiled to native machine code, but rather to bytecode. While machine code is certainly faster, bytecode is more portable and secure. The bytecode is then interpreted in the case of CPython (or both interpreted and compiled to optimized machine code at runtime in the case of PyPy).
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What are some alternative implementations to CPython? When and why might you use them?
 
@@ -4008,9 +3731,7 @@ Another noteworthy alternative implementation is PyPy whose key features include
 - Sandboxing. PyPy provides the ability to run untrusted code in a fully secure way.
 - Stackless mode. PyPy comes by default with support for stackless mode, providing micro-threads for massive concurrency.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. What is unittest in Python? What's your approach to unit testing in Python?
 
@@ -4028,9 +3749,7 @@ The value and power of mock are well explained in An Introduction to Mocking in 
 
 [Note: This question is for Python developers who are also experienced in Java.]
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How would you perform unit-testing on your Python code?
 
@@ -4060,9 +3779,7 @@ Ans.  For this purpose, we have the module unittest in Python. It has the follow
 
 Below are some Advanced Python Programming Interview Questions For Experienced. I recommend freshers to also refer these interview questions for advanced knowledge.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. How do I test a Python program or component?
 
@@ -4093,9 +3810,7 @@ if __name__ == "__main__":
 
 Even programs that interact with complex external interfaces may be tested when the external interfaces are unavailable by using "fake" interfaces implemented in Python.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ### FLASK
 
@@ -4107,9 +3822,7 @@ Flask is a web micro framework for Python based on "Werkzeug, Jinja 2 and good i
 
 Flask is part of the micro-framework. Which means it will have little to no dependencies on external libraries. It makes the framework light while there is little dependency to update and less security bugs.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Mention what is Flask-WTF and what are their features?
 
@@ -4122,9 +3835,7 @@ Flask-WTF offers simple integration with WTForms. Features include for Flask WTF
     Recaptcha supporting
     File upload that works with Flask Uploads
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain what is the common way for the Flask script to work?
 
@@ -4137,9 +3848,7 @@ The common way for the flask script to work is
 
 A session basically allows you to remember information from one request to another. In a flask, it uses a signed cookie so the user can look at the session contents and modify. The user can modify the session if only it has the secret key Flask.secret_key.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Is Flask an MVC model and if yes give an example showing MVC pattern for your application?
 
@@ -4169,9 +3878,7 @@ While your model or main part will be
 
     app.run(debug = True)
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## Q. Explain database connection in Python Flask?
 
@@ -4181,9 +3888,7 @@ Best database for flask is MySQL. Flask supports database powered application (R
    - `after_request()`: They are called after a request and pass the response that will be sent to the client.   
    - `teardown_request()`: They are called in situation when exception is raised, and response are not guaranteed. They are called after the response been constructed. They are not allowed to modify the request, and their values are ignored.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 ## How will you sort result of student whose marks are unknown to you based on their roll numbers? 
   Using bubble sort.
@@ -4191,9 +3896,7 @@ Best database for flask is MySQL. Flask supports database powered application (R
 ## Q. How will you check memory leak on Linux?
 - valgrind along with gcc.
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+
 
 #### Q. How can you return multiple values from a function/method?
 #### Q. What's the fastest way to swap the values bound to two variables?
@@ -4314,6 +4017,4 @@ Best database for flask is MySQL. Flask supports database powered application (R
 #### Q. What are parameters to consider for checking when server is down?
 #### Q. How will you measure memory on Linux server?
 
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
+

@@ -17,5 +17,5 @@ class FlashCard(models.Model): # Таблица новостей которая 
         verbose_name = ("FlashCard") # человекочитаемое имя объекта
         verbose_name_plural = ("FlashCards")  #человекочитаемое множественное имя для Категорий
     def __str__(self):
-        return self.url  # __str__ применяется для отображения объекта в интерфейсе
+        return self.question  # __str__ применяется для отображения объекта в интерфейсе
 
