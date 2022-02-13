@@ -3,15 +3,28 @@
 {% block content %}
 
 
-{%for card in cards%}
+--------------------------------------------------------<p>
+{%for card in cards_2 %}
+
     <h5>{{card.question}} </h5><p>
     {{card.answer}} </p>
         
 
 {% endfor %}
-{% include "pagination.html" with page=cards %} 
+{% include "pagination.html" with page=cards i=page %} 
+{% include "pagination.html" with page_2=cards_2 i=page %} 
+--------------------------------------------------------<p>
 
---------------------------------------------------------
+{% for i in length%}
+    {% if page == i %}
+    <b> <a href="?page={{i}}&page_2=1" style="color: red"> Блок {{i}}</a>  </b> 
+    {% else %}
+        <a href="?page={{i}}&page_2=1"> Блок {{i}}</a>  
+    {% endif %}
+
+{% endfor %}
+
+
 
 {% for error in form.errors %}
   {{error}}
